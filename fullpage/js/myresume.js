@@ -64,6 +64,9 @@ $(document).ready(function() {
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
     });
+
+    //第一次页面加载完毕后 初始化操作 使第一屏动起来
+    init();
 });
 
 //Jquery 扩展方法
@@ -76,17 +79,34 @@ $.fn.extend({
     }
 });
 
+//第一次加载时动画
+function init() {
+    animatAndClear("#Resume1_title", "flipInX");
+}
+
+//屏幕切换事件
 function onLeave(index, nextIndex, direction) {
     console.log(index + "-" + nextIndex + "-" + direction);
+    if(nextIndex == 1) {
+        animatAndClear("#Resume1_title", "flipInX");
+    } else if(nextIndex == 2) {
+        animatAndClear("#Resume2_title", "rotateInDownLeft");
+    } else if(nextIndex == 3) {
+
+    } else if(nextIndex == 4) {
+
+    } else {
+        console.error("未知页面")
+    }
+
+}
+
+//元素动一下（元素，效果）
+function animatAndClear(elementSelecter, action) {
     setTimeout(function(){
-        //$('#Resume_title').animateCss('bounce');
-        //$('#Resume_title').removeClass("animated bounce");
-        $('#Resume1_title').addClass('animated flipInX');
-        $('#Resume2_title').addClass('animated bounceInLeft');
+        $(elementSelecter).addClass('animated ' + action);
         setTimeout(function(){
-            $('#Resume1_title').removeClass('animated flipInX');
-            $('#Resume2_title').removeClass('animated bounceInLeft');
+            $(elementSelecter).removeClass('animated ' + action);
         }, 1000);
-        console.log("bounce");
     }, 1000);
 }
