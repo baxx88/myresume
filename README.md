@@ -2,6 +2,6 @@
 This is my resume as a web UI developer
 
 ## skills used:
-* jquery.js
-* fullpage.js
+* Jquery.js
+* Fullpage.js
 * Animate.css
