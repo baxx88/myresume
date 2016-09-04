@@ -1,7 +1,7 @@
-# My Resume
+# My Resume Page
 This is my resume as a web UI developer
 
-## skills:
+## skills used:
 * jquery.js
 * fullpage.js
 * Animate.css
