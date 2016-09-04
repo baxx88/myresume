@@ -6,9 +6,9 @@ $(document).ready(function() {
         anchors:['1', '2','3', '4'],
         navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['1', '2','3', '4'],
+        navigationTooltips: ['', '','', ''],
         showActiveTooltip: false,
-        slidesNavigation: true,
+        slidesNavigation: false,
         slidesNavPosition: 'bottom',
 
         //Scrolling
@@ -44,7 +44,7 @@ $(document).ready(function() {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+        sectionsColor: ['#CC3399', '#9933CC', '#CC99CC', '#006633', '#CC99CC'],
         paddingTop: '3em',
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
@@ -80,8 +80,13 @@ function onLeave(index, nextIndex, direction) {
     console.log(index + "-" + nextIndex + "-" + direction);
     setTimeout(function(){
         //$('#Resume_title').animateCss('bounce');
-        $('#Resume_title').addClass("animated  1 bounce");
+        //$('#Resume_title').removeClass("animated bounce");
+        $('#Resume1_title').addClass('animated flipInX');
+        $('#Resume2_title').addClass('animated bounceInLeft');
+        setTimeout(function(){
+            $('#Resume1_title').removeClass('animated flipInX');
+            $('#Resume2_title').removeClass('animated bounceInLeft');
+        }, 1000);
         console.log("bounce");
     }, 1000);
-
 }
