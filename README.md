@@ -1,4 +1,4 @@
-# myresume
+# My Resume
 This is my resume as a web UI developer
 
 ## skills:
